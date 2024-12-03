@@ -64,7 +64,6 @@ func Part1(filepath string) {
 			}
 			lastNumber = lineNumbers[i]
 		}
-		fmt.Println(isSafe)
 		if isSafe {
 			safeReports += 1
 		}

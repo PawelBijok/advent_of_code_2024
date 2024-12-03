@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/pawelbijok/advent2024/days/day_1"
@@ -10,8 +12,23 @@ import (
 )
 
 func main() {
-	day := 3
-	part := 2
+	args := os.Args
+	if len(args) < 3 {
+		fmt.Println("Please provide day and part")
+	}
+
+	day, e := strconv.Atoi(args[1])
+
+	if e != nil {
+		fmt.Println("Invalid day arguments")
+		os.Exit(1)
+	}
+	part, e := strconv.Atoi(args[2])
+	if e != nil {
+		fmt.Println("Invalid part arguments")
+		os.Exit(1)
+	}
+
 	start := time.Now().UnixNano()
 	if day == 1 {
 		if part == 1 {
